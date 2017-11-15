@@ -3,15 +3,15 @@ import java.util.*;
 
 public class OddNumbersExterminator {
 
-        ArrayList<Integer> numbersEven = new ArrayList<Integer>(10);
+    public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
 
-        public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
+        ArrayList<Integer> numbersEven = new ArrayList<Integer>();
 
-            for (int i=0; i<numbers.size(); i++) {
-                if (numbers.get(i) % 2 == 0) {
-                    numbersEven.add(numbers.get(i));
-                }
+        for (int i=0; i<numbers.size(); i++) {
+            if (numbers.get(i) % 2 == 0) {
+                numbersEven.add(numbers.get(i));
             }
-            return numbersEven;
         }
+        return numbersEven;
+    }
 }
