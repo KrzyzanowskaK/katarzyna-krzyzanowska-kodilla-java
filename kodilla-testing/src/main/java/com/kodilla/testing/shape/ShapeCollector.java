@@ -9,8 +9,8 @@ public class ShapeCollector {
     public void removeFigure(Shape shape) {
 
     }
-    public int getFigure(int n) {
-        return 0;
+    public Square getFigure(int n) {
+        return null;
     }
 
     public void showFigures() {

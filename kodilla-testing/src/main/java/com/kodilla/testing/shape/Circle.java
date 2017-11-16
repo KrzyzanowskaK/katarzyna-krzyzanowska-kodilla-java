@@ -2,11 +2,11 @@ package com.kodilla.testing.shape;
 
 public class Circle implements Shape {
 
-    public void getShapeName() {
-        System.out.println("circle");
+    public String getShapeName() {
+        return "circle";
     }
 
-    public void getField() {
-        System.out.println("25");
+    public double getField() {
+        return 12;
     }
 }

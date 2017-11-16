@@ -6,8 +6,8 @@ import java.lang.*;
 import java.util.ArrayList;
 
 public class ShapeCollectorTestSuite {
-
-    /*@Test
+/*
+    @Test
     public void testAddFigure() {
         //Given
         ArrayList<ShapeCollector> shapes = new ArrayList<ShapeCollector>();
@@ -22,38 +22,36 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testRemoveFigure() {
         //Given
-        ArrayList<ShapeCollector> shapes = new ArrayList<ShapeCollector>(Square);
+        ArrayList<ShapeCollector> shapes = new ArrayList<ShapeCollector>();
+        Square square = new Square();
+        shapes.add(square);
 
         //When
-        ArrayList removedShape = shapes.removeFigure(Square);
+        ArrayList removedShape = shapes.removeFigure();
 
         //Then
         Assert.assertFalse(removedShape);
     }
-
+*/
     @Test
     public void testGetFigure() {
         //Given
-        ArrayList<ShapeCollector> shapes = new ArrayList<ShapeCollector>(){Square, Triangle, Circle};
+        ShapeCollector shapes = new ShapeCollector();
+        Square square1 = new Square();
+        shapes.addFigure(square1);
+        /*Triangle triangle1 = new Triangle();
+        shapes.addFigure(triangle1);
+        Circle circle1 = new Circle();
+        shapes.addFigure(circle1);*/
 
         //When
-        ArrayList getShapes = shapes.getFigure();
-        ArrayList checkShapes = shapes.indexOf(Square, Triangle, Circle);
+        Shape square = shapes.getFigure(0);
+        //Shape triangle = shapes.getFigure(1);
+        //Shape circle = shapes.getFigure(2);
 
         //Then
-        Assert.assertEquals(getShapes, checkShapes);
+        Assert.assertEquals(square, square1);
+        //Assert.assertEquals(triangle, triangle1);
+        //Assert.assertEquals(circle, circle1);
     }
-
-    @Test
-    public void testShowFigures() {
-        //Given
-        ArrayList<ShapeCollector> shapes = new ArrayList<ShapeCollector>(){Square, Triangle, Circle};
-
-        //When
-        ArrayList showShapes = shapes.showFigures();
-        ArrayList printShapes = System.out.println(shapes);
-
-        //Then
-        Assert.assertEquals(printShapes, showShapes);
-    }*/
 }
