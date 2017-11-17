@@ -1,19 +1,20 @@
-package com.kodilla.testing.shape;
-
+import com.kodilla.testing.shape.Shape;
+import com.kodilla.testing.shape.ShapeCollector;
+import com.kodilla.testing.shape.Square;
 import org.junit.*;
 
-import java.lang.*;
 import java.util.ArrayList;
 
 public class ShapeCollectorTestSuite {
-/*
+
     @Test
     public void testAddFigure() {
         //Given
-        ArrayList<ShapeCollector> shapes = new ArrayList<ShapeCollector>();
+        ShapeCollector shapes = new ShapeCollector();
+        Square square = new Square();
 
         //When
-        ArrayList addedShape = shapes.addFigure();
+        ArrayList addedShape = shapes.addFigure(square);
 
         //Then
         Assert.assertEquals(1, addedShape.size());
@@ -22,17 +23,17 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testRemoveFigure() {
         //Given
-        ArrayList<ShapeCollector> shapes = new ArrayList<ShapeCollector>();
+        ShapeCollector shapes = new ShapeCollector();
         Square square = new Square();
-        shapes.add(square);
+        shapes.addFigure(square);
 
         //When
-        ArrayList removedShape = shapes.removeFigure();
+        ArrayList removedShape = shapes.removeFigure(square);
 
         //Then
-        Assert.assertFalse(removedShape);
+        Assert.assertEquals(0, removedShape.size());
     }
-*/
+
     @Test
     public void testGetFigure() {
         //Given
