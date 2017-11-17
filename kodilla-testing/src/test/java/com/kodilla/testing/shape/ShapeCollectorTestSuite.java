@@ -1,8 +1,5 @@
-import com.kodilla.testing.shape.Shape;
-import com.kodilla.testing.shape.ShapeCollector;
-import com.kodilla.testing.shape.Square;
+import com.kodilla.testing.shape.*;
 import org.junit.*;
-
 import java.util.ArrayList;
 
 public class ShapeCollectorTestSuite {
@@ -40,19 +37,19 @@ public class ShapeCollectorTestSuite {
         ShapeCollector shapes = new ShapeCollector();
         Square square1 = new Square();
         shapes.addFigure(square1);
-        /*Triangle triangle1 = new Triangle();
+        Triangle triangle1 = new Triangle();
         shapes.addFigure(triangle1);
         Circle circle1 = new Circle();
-        shapes.addFigure(circle1);*/
+        shapes.addFigure(circle1);
 
         //When
         Shape square = shapes.getFigure(0);
-        //Shape triangle = shapes.getFigure(1);
-        //Shape circle = shapes.getFigure(2);
+        Shape triangle = shapes.getFigure(1);
+        Shape circle = shapes.getFigure(2);
 
         //Then
         Assert.assertEquals(square, square1);
-        //Assert.assertEquals(triangle, triangle1);
-        //Assert.assertEquals(circle, circle1);
+        Assert.assertEquals(triangle, triangle1);
+        Assert.assertEquals(circle, circle1);
     }
 }
