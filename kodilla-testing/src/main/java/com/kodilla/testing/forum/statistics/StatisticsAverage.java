@@ -11,18 +11,23 @@ public class StatisticsAverage {
     public int getUserNumber() {
         return userNumber;
     }
+
     public int getCommentNumber() {
         return commentNumber;
     }
+
     public int getPostNumber() {
         return postNumber;
     }
+
     public double getAveragePostUser() {
         return averagePostUser;
     }
+
     public double getAverageCommentUser() {
         return averageCommentUser;
     }
+
     public double getAverageCommentPost() {
         return averageCommentPost;
     }
@@ -32,12 +37,22 @@ public class StatisticsAverage {
         this.commentNumber = statistics.commentsCount();
         this.postNumber = statistics.postsCount();
 
-        this.averagePostUser = postNumber / userNumber;
-        this.averageCommentUser = commentNumber / userNumber;
-        this.averageCommentPost = commentNumber / postNumber;
+        if (userNumber < 0) {
+            this.averagePostUser = postNumber / userNumber;
+        }
+
+        if (commentNumber < 0) {
+            this.averageCommentUser = commentNumber / userNumber;
+        }
+
+        if(postNumber < 0) {
+            this.averageCommentPost = commentNumber / postNumber;
+        }
     }
 
-    public void ShowStatistics() {
-
+    public void ShowStatistics(){
+        System.out.println("Average number of posts per User: " + getAveragePostUser());
+        System.out.println("Average number of comments per User: " + getAverageCommentUser());
+        System.out.println("Average number of comments per Post: " + getAverageCommentPost());
     }
 }
