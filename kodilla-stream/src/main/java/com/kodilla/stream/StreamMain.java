@@ -1,6 +1,7 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.ExecuteSaySomething;
 import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.lambda.Processor;
@@ -25,5 +26,9 @@ public class StreamMain {
 
         PoemBeautifier poemBeautyfier = new PoemBeautifier();
 
-        poemBeautyfier.beautify("There and back again", text -> "ABC" + text + "ABC");
+        poemBeautyfier.beautify("There and Back Again", text -> "ABC " + text + " ABC");
+        poemBeautyfier.beautify("There and Back Again", text -> text.toUpperCase());
+        poemBeautyfier.beautify("There and Back Again", text -> text.replace("a", "@"));
+        poemBeautyfier.beautify("There and Back Again", text -> text.toLowerCase());
+    }
 }
