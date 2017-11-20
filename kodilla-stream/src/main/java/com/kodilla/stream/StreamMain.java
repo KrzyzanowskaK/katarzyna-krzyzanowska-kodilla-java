@@ -10,7 +10,7 @@ import com.kodilla.stream.reference.FunctionalCalculator;
 public class StreamMain {
     public static void main(String[] args) {
 
-        /*ExpressionExecutor expressionExecutor = new ExpressionExecutor();
+        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
 
         System.out.println("Calculating expressions with lambdas");
         expressionExecutor.executeExpression(10, 5, (a, b) -> a + b);
@@ -29,7 +29,7 @@ public class StreamMain {
         poemBeautyfier.beautify("There and Back Again", text -> "ABC " + text + " ABC");
         poemBeautyfier.beautify("There and Back Again", text -> text.toUpperCase());
         poemBeautyfier.beautify("There and Back Again", text -> text.replace("a", "@"));
-        poemBeautyfier.beautify("There and Back Again", text -> text.toLowerCase());*/
+        poemBeautyfier.beautify("There and Back Again", text -> text.toLowerCase());
 
         System.out.println("Using Stream to generate even numbers from 1 to 20");
         NumbersGenerator.generateEven(20);
