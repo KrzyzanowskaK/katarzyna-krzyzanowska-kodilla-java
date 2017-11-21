@@ -1,37 +1,24 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.iterate.NumbersGenerator;
-import com.kodilla.stream.lambda.ExecuteSaySomething;
-import com.kodilla.stream.lambda.ExpressionExecutor;
-import com.kodilla.stream.lambda.Processor;
-import com.kodilla.stream.reference.FunctionalCalculator;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
+
+import java.util.stream.Collectors;
+import java.util.Map;
 
 public class StreamMain {
     public static void main(String[] args) {
 
-        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
+        Forum forum = new Forum();
 
-        System.out.println("Calculating expressions with lambdas");
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a + b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a - b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a * b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a / b);
+        Map<Integer,ForumUser> mapForumUser = forum.getUsersList().stream()
+                .filter(forumUser -> forumUser.getSex() == 'M')
+                .filter(forumUser -> forumUser.getBirthDate().getYear() < 1997)
+                .filter(forumUser -> forumUser.getPublishedPosts() >= 1)
+                .collect(Collectors.toMap(ForumUser::getUserID, ForumUser -> ForumUser));
 
-        System.out.println("Calculating expressions with method references");
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::multiplyAByB);
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::addAToB);
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::subBFromA);
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
-
-        PoemBeautifier poemBeautyfier = new PoemBeautifier();
-
-        poemBeautyfier.beautify("There and Back Again", text -> "ABC " + text + " ABC");
-        poemBeautyfier.beautify("There and Back Again", text -> text.toUpperCase());
-        poemBeautyfier.beautify("There and Back Again", text -> text.replace("a", "@"));
-        poemBeautyfier.beautify("There and Back Again", text -> text.toLowerCase());
-
-        System.out.println("Using Stream to generate even numbers from 1 to 20");
-        NumbersGenerator.generateEven(20);
+        mapForumUser.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .forEach(System.out::println);
     }
 }
