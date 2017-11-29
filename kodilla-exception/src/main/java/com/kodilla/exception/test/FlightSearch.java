@@ -12,11 +12,12 @@ public class FlightSearch {
         openAirport.put("Pekin", false);
         openAirport.put("Praga", false);
 
-        Boolean possible = openAirport.get(flight.getArrivalAirport());
+        Boolean possible = openAirport.getOrDefault(flight.getArrivalAirport(), false);
 
-        if (possible == null || possible == false) {
+        if (possible == false && !openAirport.containsKey(flight.getArrivalAirport())) {
             throw new RouteNotFoundException("Sorry, this flight is not available");
         }
+
         return possible;
     }
 }

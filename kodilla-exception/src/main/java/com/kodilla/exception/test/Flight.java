@@ -1,8 +1,8 @@
 package com.kodilla.exception.test;
 
 public class Flight {
-    String departureAirport;
-    String arrivalAirport;
+    private String departureAirport;
+    private String arrivalAirport;
 
     public Flight(String departureAirport, String arrivalAirport) {
         this.departureAirport = departureAirport;
@@ -10,10 +10,12 @@ public class Flight {
     }
 
     public String getDepartureAirport() {
+
         return departureAirport;
     }
 
     public String getArrivalAirport() {
+
         return arrivalAirport;
     }
 
@@ -34,5 +36,13 @@ public class Flight {
         int result = getDepartureAirport() != null ? getDepartureAirport().hashCode() : 0;
         result = 31 * result + (getArrivalAirport() != null ? getArrivalAirport().hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "departureAirport='" + departureAirport + '\'' +
+                ", arrivalAirport='" + arrivalAirport + '\'' +
+                '}';
     }
 }
