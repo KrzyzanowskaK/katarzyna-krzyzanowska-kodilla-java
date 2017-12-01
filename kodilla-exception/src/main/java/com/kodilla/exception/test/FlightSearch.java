@@ -14,7 +14,7 @@ public class FlightSearch {
 
         Boolean possible = openAirport.getOrDefault(flight.getArrivalAirport(), false);
 
-        if (possible == false && !openAirport.containsKey(flight.getArrivalAirport())) {
+        if (!possible && !openAirport.containsKey(flight.getArrivalAirport())) {
             throw new RouteNotFoundException("Sorry, this flight is not available");
         }
 
