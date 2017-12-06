@@ -8,12 +8,28 @@ public class Food2DoorMain {
         List<Product> theList = new ArrayList<>();
         theList.add(new Product("Apple", 2.5,true));
         theList.add(new Product("Cherry", 0.5,true));
-        theList.add(new Product("Orange", 2.1,true));
-        theList.add(new Product("Coconut", 5.2,false));
         ExtraFoodShop extraFoodShop = new ExtraFoodShop(theList);
+
+        List<Product> healthyProducts = new ArrayList<>();
+        healthyProducts.add(new Product("Carrot", 2.1,true));
+        healthyProducts.add(new Product("Potatoes", 5.2,true));
+        HealthyShop healthyShop = new HealthyShop(healthyProducts);
+
+        List<Product> noGluten = new ArrayList<>();
+        noGluten.add(new Product("Bread", 6.5,true));
+        noGluten.add(new Product("Eggs", 3.0,true));
+        GlutenFreeShop glutenFreeShop = new GlutenFreeShop(noGluten);
 
         ProducerRepository repository = new ProducerRepository();
         repository.addProducer(extraFoodShop);
+        repository.addProducer(healthyShop);
+        repository.addProducer(glutenFreeShop);
+
+        Customer customer = new Customer("Ann", "Green");
+        Order order = new Order(customer, );
+        ProcessOrder processOrder = new ProcessOrder();
+        processOrder.retrieve(order);
+
 
 
         /*ExtraFoodShop extraFoodShop = new ExtraFoodShop(theList);

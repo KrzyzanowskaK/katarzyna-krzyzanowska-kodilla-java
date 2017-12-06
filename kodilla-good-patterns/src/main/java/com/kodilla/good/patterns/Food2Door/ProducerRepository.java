@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProducerRepository {
-    List<Producer> producerList = new ArrayList<>();
+    private List<Producer> producerList = new ArrayList<>();
 
     public void addProducer(Producer producer) {
-        this.addProducerList.add(producer);
+        this.producerList.add(producer);
     }
 }
