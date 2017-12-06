@@ -6,6 +6,7 @@ public class ProcessOrder {
     public ProcessOrder(Producer producer) {
         this.producer = producer;
     }
+
     public Order process(Order order) {
         producer.process(order.getProduct());
         return order;
