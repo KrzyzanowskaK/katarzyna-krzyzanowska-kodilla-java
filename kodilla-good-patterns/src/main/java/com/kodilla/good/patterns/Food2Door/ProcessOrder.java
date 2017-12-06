@@ -10,7 +10,7 @@ public class ProcessOrder {
         System.out.println("Zamówienie klienta " + customer.getName() + " " + customer.getLastName());
 
         System.out.println("Procesowanie zamówienia...");
-        order.getOrdersItem().for(v -> {
+        order.getOrdersItem().forEach(v -> {
             System.out.println("Produkt: " + v.getProduct() + " został zamówiony w ilości: " + v.getQuantity());
         });
     }

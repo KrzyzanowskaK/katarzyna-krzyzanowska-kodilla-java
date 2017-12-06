@@ -16,7 +16,6 @@ public class Food2DoorMain {
         repository.addProducer(extraFoodShop);
 
 
-
         /*ExtraFoodShop extraFoodShop = new ExtraFoodShop(theList);
         HealthyShop healthyShop = new HealthyShop(theList);
         GlutenFreeShop glutenFreeShop = new GlutenFreeShop(theList);
