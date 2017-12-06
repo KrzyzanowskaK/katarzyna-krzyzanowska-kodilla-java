@@ -22,4 +22,12 @@ public class Product {
     public boolean getAvailable() {
         return available;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

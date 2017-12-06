@@ -9,4 +9,8 @@ public class ProducerRepository {
     public void addProducer(Producer producer) {
         this.producerList.add(producer);
     }
+
+    public String getProducerName(Product product) {
+        producerList.stream().map(v -> v.getProductsList()).flatMap(p -> p.stream()).filter(x -> x.getName().equals(product.getName())).findFirst().getName();
+    }
 }

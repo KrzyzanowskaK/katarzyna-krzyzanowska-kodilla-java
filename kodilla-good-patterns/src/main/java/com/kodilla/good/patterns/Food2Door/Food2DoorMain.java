@@ -26,7 +26,11 @@ public class Food2DoorMain {
         repository.addProducer(glutenFreeShop);
 
         Customer customer = new Customer("Ann", "Green");
-        Order order = new Order(customer, );
+        OrderItem item1 = new OrderItem(new Product("Apple", 2.5, true), 2);
+        List<OrderItem> itemList = new ArrayList<>();
+        itemList.add(item1);
+
+        Order order = new Order(customer, itemList);
         ProcessOrder processOrder = new ProcessOrder();
         processOrder.retrieve(order);
 
