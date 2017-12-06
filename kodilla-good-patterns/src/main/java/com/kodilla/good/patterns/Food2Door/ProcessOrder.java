@@ -14,15 +14,4 @@ public class ProcessOrder {
             System.out.println("Produkt: " + v.getProduct() + " został zamówiony w ilości: " + v.getQuantity());
         });
     }
-
-    /*private  Producer producer;
-
-    public ProcessOrder(Producer producer) {
-        this.producer = producer;
-    }
-
-    public Order process(Order order) {
-        producer.process(order.getProduct());
-        return order;
-    }*/
 }
