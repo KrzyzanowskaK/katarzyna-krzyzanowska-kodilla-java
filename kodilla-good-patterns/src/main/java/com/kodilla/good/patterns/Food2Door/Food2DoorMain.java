@@ -10,8 +10,14 @@ public class Food2DoorMain {
         theList.add(new Product("Cherry", 0.5,true));
         theList.add(new Product("Orange", 2.1,true));
         theList.add(new Product("Coconut", 5.2,false));
-
         ExtraFoodShop extraFoodShop = new ExtraFoodShop(theList);
+
+        ProducerRepository repository = new ProducerRepository();
+        repository.addProducer(extraFoodShop);
+
+
+
+        /*ExtraFoodShop extraFoodShop = new ExtraFoodShop(theList);
         HealthyShop healthyShop = new HealthyShop(theList);
         GlutenFreeShop glutenFreeShop = new GlutenFreeShop(theList);
 
@@ -31,7 +37,7 @@ public class Food2DoorMain {
         GetOrder getOrder3 = new GetOrder();
         Order order3 = getOrder3.retrieve3();
         processOrder3.process(order3);
-        System.out.println("Summary: Customer " + order3.getCustomer() + " has to pay: " + order3.getValue() + " PLN");
+        System.out.println("Summary: Customer " + order3.getCustomer() + " has to pay: " + order3.getValue() + " PLN");*/
 
     }
 }
