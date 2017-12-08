@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HealthyShop implements Producer {
+    private static final String SHOP_NAME = "HealthyShop";
     private List<Product> products = new ArrayList();
 
     public HealthyShop(List<Product> products) {
@@ -13,11 +14,20 @@ public class HealthyShop implements Producer {
     @Override
     public void process(Product product) {
         if (product.getAvailable()) {
-            System.out.println("Order from Healthy Shop: " + product.getName() + ". Price (per item): " +
-                    product.getPrice() + " PLN.");
+            System.out.println("Order from Healthy Shop.");
         } else {
             System.out.println("Sorry, product not available.");
         }
+    }
+
+    @Override
+    public String getProducerName() {
+        return SHOP_NAME;
+    }
+
+    @Override
+    public List<Product> getProducts() {
+        return products;
     }
 }
 
