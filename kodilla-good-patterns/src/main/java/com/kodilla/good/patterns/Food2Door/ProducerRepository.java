@@ -1,6 +1,5 @@
 package com.kodilla.good.patterns.Food2Door;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
