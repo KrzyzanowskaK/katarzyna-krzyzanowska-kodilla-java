@@ -13,13 +13,8 @@ public class Game {
     private int computerScore = 0 ;
 
     public void start() {
-        String userName;
-        int endingScore;
-
-        System.out.print("Enter your name: ");
-        userName = scanner.next();
-        System.out.print("How much wins to end the game? ");
-        endingScore = scanner.nextInt();
+        String userName = menu.enterName(scanner);;
+        int endingScore = menu.endingScore(scanner);
 
         System.out.println();
         System.out.println(menu.instruction());
@@ -42,9 +37,6 @@ public class Game {
                 menu.checkScore(userName,userScore,computerScore);
 
             } else {
-                assert (("Rock".equals(computer) && "Scissors".equals(player)) ||
-                        ("Paper".equals(computer) && "Rock".equals(player)) ||
-                        ("Scissors".equals(computer) && "Paper".equals(player)));
                 System.out.println(userName + " LOSE!");
                 computerScore++;
                 menu.checkScore(userName,userScore,computerScore);
@@ -56,11 +48,8 @@ public class Game {
                 System.out.println(userScore > computerScore ?
                         "Congratulation " + userName + "! You WIN! Your score: " + userScore : "Sorry, you lose, computer score: " + computerScore);
                 menu.playAgain(scanner);
-                break;
-            }
-            /*if(userScore == endingScore || computerScore == endingScore){
                 roundFinished = true;
-            }*/
+            }
         }
     }
 }

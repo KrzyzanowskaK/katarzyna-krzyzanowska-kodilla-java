@@ -7,33 +7,45 @@ public class Menu {
         return "Instructions: Key 1 - rock Key 2 - paper Key 3 - scissors Key x - end of game Key n - new game";
     }
 
-    /*public int endingScore (Scanner scanner) {
-        boolean endingScoreValid = true;
-        int howManyWins = 0;
-        while (endingScoreValid) {
+    public String enterName(Scanner scanner) {
+        String userName;
+        System.out.print("Enter your name: ");
+        userName = scanner.next();
+        return userName;
+    }
+
+    public int endingScore (Scanner scanner) {
+        System.out.print("How much wins to end the game? ");
+        int endingScore = 0;
+        boolean correctWins = false;
+        while (!correctWins) {
+            String value = scanner.next();
             try {
-                howManyWins = scanner.nextInt();
-                if (howManyWins > 0) {
-                    endingScoreValid = false;
-                } else {
+                endingScore = Integer.parseInt(value);
+                if (endingScore == 0) {
                     System.out.println("Number must be greater than zero");
+                } else {
+                    correctWins = true;
                 }
-            } catch (NumberFormatException num) {
-                System.out.println("Please select integer number");
+            } catch(NumberFormatException e) {
+                System. out. println("Please input number ");
             }
         }
-        return howManyWins;
-    }*/
+        return endingScore;
+    }
 
     public boolean playAgain(Scanner scanner){
-        System.out.println("Do You want to play a new game (n) or end (x) ?");
-        switch (scanner.next()){
-            case "n":
-                return areYouSure(scanner);
-            case "x" :
-                System.out.println("Thank you for playing!");
-            default:
-                break;
+        boolean correctKey = false;
+        while (!correctKey) {
+            System.out.println("Do You want to play a new game (n) or end (x) ?");
+            switch (scanner.next()) {
+                case "n":
+                    return areYouSure(scanner);
+                case "x":
+                    System.out.println("Thank you for playing!");
+                    correctKey = true;
+                    break;
+            }
         }
         return false;
     }
@@ -47,8 +59,6 @@ public class Menu {
                 return true;
             case "n":
                 return playAgain(scanner);
-            default:
-                break;
         }
         return false;
     }
