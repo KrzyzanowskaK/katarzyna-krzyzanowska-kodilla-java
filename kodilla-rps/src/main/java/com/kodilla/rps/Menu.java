@@ -3,8 +3,6 @@ package com.kodilla.rps;
 import java.util.Scanner;
 
 public class Menu {
-
-
     public String instruction() {
         return "Instructions: Key 1 - rock Key 2 - paper Key 3 - scissors Key x - end of game Key n - new game";
     }
@@ -58,6 +56,4 @@ public class Menu {
     public void checkScore(String userName, int userScore, int computerScore){
         System.out.println(userName + " " + userScore + " vs Computer: " + computerScore);
     }
-
-
 }
