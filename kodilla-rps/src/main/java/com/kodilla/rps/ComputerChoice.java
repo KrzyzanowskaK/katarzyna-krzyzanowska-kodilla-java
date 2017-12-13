@@ -2,22 +2,15 @@ package com.kodilla.rps;
 
 import java.util.Random;
 
-public class ComputerChoice {
+public class ComputerChoice implements PlayRPS {
+    private Random random;
 
-    public static String generateComputerChoice(Random random) {
+    public ComputerChoice(Random random) {
+        this.random = random;
+    }
 
-        int wordNumber;
-        wordNumber = random.nextInt(3)+1;
-        String computerWordChoice = "";
-
-        if(wordNumber == 1) {
-            computerWordChoice = "kamień";
-        } else if(wordNumber == 2) {
-            computerWordChoice = "papier";
-        } else if(wordNumber == 3) {
-            computerWordChoice = "nożyce";
-        }
-
-        return computerWordChoice;
+    @Override
+    public String play() {
+        return choosing[this.random.nextInt(choosing.length)];
     }
 }
