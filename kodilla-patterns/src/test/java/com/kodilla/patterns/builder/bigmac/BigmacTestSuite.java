@@ -11,9 +11,9 @@ public class BigmacTestSuite {
                 .roll(new Roll("without sesame"))
                 .burgers(2)
                 .sauce(new Sauce("THOUSAND ISLANDS"))
-                .ingredient(new Ingredient("bacon"))
-                .ingredient(new Ingredient("mushrooms"))
-                .ingredient(new Ingredient("cheese"))
+                .ingredient(Ingredient.BACON)
+                .ingredient(Ingredient.CHEESE)
+                .ingredient(Ingredient.MUSHROOMS)
                 .build();
         //When
         int ingredients = bigMac.getIngredients().size();
