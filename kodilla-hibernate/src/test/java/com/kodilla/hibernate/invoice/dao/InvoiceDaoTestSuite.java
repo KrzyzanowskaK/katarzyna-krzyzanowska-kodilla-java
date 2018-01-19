@@ -52,9 +52,13 @@ public class InvoiceDaoTestSuite {
 
         //When
         int itemSize = invoice.getItems().size();
+        invoiceDao.save(invoice);
+        int invoiceId = invoice.getId();
+        Invoice invoiceDatabase = invoiceDao.findById(invoiceId);
 
         //Then
         Assert.assertEquals(4, itemSize);
+        Assert.assertEquals(invoiceId, invoiceDatabase.getId());
 
         //CleanUp
         invoiceDao.delete(invoice);
