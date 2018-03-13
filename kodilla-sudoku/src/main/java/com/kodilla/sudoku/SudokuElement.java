@@ -10,5 +10,4 @@ public class SudokuElement {
     public void setValue(int value) {
         this.value = value;
     }
-
 }

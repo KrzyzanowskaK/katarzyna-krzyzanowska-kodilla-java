@@ -23,3 +23,11 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+.gitignore
+build.gradle
+gradle/
+gradlew
+gradlew.bat
+src/main/java/com/kodilla/patterns2/KodillaPatterns2Application.java
+src/main/resources/
+src/test/
