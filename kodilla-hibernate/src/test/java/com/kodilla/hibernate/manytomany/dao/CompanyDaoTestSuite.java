@@ -105,7 +105,7 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
 
         //When
-        List<Company> nameStartedWith = companyDao.retrieveCompanyStartingWith("Sof");
+        List<Company> nameStartedWith = companyDao.getCompanyName("Sof");
 
         //Then
         Assert.assertEquals(2, nameStartedWith.size());
