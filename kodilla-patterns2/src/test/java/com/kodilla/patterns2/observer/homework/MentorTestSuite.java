@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class HomeworkTestSuite {
+public class MentorTestSuite {
 
     @Test
     public void testUpdate() {
