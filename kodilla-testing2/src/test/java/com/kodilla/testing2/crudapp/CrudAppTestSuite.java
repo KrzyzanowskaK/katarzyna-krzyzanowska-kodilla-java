@@ -27,7 +27,7 @@ public class CrudAppTestSuite {
     }
 
     @Test
-    public void createCrudAppTestTask() throws InterruptedException {
+    public String createCrudAppTestTask() throws InterruptedException {
         final String XPATH_TASK_NAME = "//form[contains(@action,\"createTask\")]/fieldset[1]/input";
         final String XPATH_TASK_CONTENT = "//form[contains(@action,\"createTask\")]/fieldset[2]/textarea";
         final String XPATH_TASK_BUTTON = "//form[contains(@action,\"createTask\")]/fieldset[3]/button";
@@ -43,6 +43,8 @@ public class CrudAppTestSuite {
         WebElement addButton = driver.findElement(By.xpath(XPATH_TASK_BUTTON));
         addButton.click();
         Thread.sleep(2000);
+
+        return taskName;
     }
 
     @Test
